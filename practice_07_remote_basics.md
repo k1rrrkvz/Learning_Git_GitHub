@@ -268,6 +268,48 @@ git remote add origin ~/Documents/remote-repo.git
 
 ---
 
+## Бонус: Работа с реальным GitHub
+
+### Подготовка
+Если у вас есть аккаунт GitHub и настроен токен/SSH, можете попробовать работу с реальным удалённым репозиторием.
+
+### Шаги для GitHub
+
+1. **Создайте репозиторий на GitHub:**
+   - Войдите на github.com
+   - Нажмите "+" → "New repository"
+   - Назовите: `git-practice-remote`
+   - НЕ добавляйте README, .gitignore, license
+   - Нажмите "Create repository"
+
+2. **Подключите локальный репозиторий:**
+```bash
+cd ~/Documents/my-app
+git remote remove origin  # удалите локальный remote если есть
+git remote add origin https://github.com/ваш-username/git-practice-remote.git
+```
+
+3. **Отправьте код:**
+```bash
+git push -u origin master
+```
+
+4. **Обновите страницу GitHub — ваш код там!**
+
+5. **Внесите изменения на GitHub:**
+   - Откройте README.md на GitHub
+   - Нажмите кнопку редактирования (карандаш)
+   - Добавьте строку "Edited on GitHub"
+   - Commit changes
+
+6. **Получите изменения локально:**
+```bash
+git pull
+cat README.md  # увидите изменения с GitHub
+```
+
+---
+
 ## Что вы изучили
 ✓ Создание bare репозитория (`git init --bare`)  
 ✓ Добавление удалённого репозитория (`git remote add`)  
@@ -276,6 +318,7 @@ git remote add origin ~/Documents/remote-repo.git
 ✓ Клонирование репозитория (`git clone`)  
 ✓ Просмотр удалённых веток (`git branch -a`)  
 ✓ Связывание локальных и удалённых веток (`-u`)  
+✓ (Бонус) Работа с реальным GitHub  
 
 ---
 
